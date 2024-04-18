@@ -1,5 +1,9 @@
 {
   "devDependencies": {
     "cypress": "^13.7.3"
+  },
+  "dependencies": {
+    "chai-sorted": "^0.2.0",
+    "cypress-map": "^1.37.0"
   }
 }
