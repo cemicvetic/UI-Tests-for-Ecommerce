@@ -1,3 +1,5 @@
+import item from '../fixtures/bike-light.json'
+
 beforeEach(() => {
   cy.log('**log in**')
   cy.visit('/')
@@ -8,12 +10,9 @@ beforeEach(() => {
 })
 
 it('has an item with details', () => {
-  cy.contains('.inventory_item', 'Sauce Labs Bike Light').within(() => {
-    cy.contains('.inventory_item_name', 'Sauce Labs Bike Light')
-    cy.contains(
-      '.inventory_item_desc',
-      "A red light isn't the desired state in testing but it sure helps when riding your bike at night.",
-    )
-    cy.contains('.inventory_item_price', '$9.99')
+  cy.contains('.inventory_item', item.name).within(() => {
+    cy.contains('.inventory_item_name', item.name)
+    cy.contains('.inventory_item_desc', item.description)
+    cy.contains('.inventory_item_price', item.price)
   })
 })

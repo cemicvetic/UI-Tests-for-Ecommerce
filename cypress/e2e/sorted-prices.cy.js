@@ -4,7 +4,7 @@ chai.use(require("chai-sorted"));
 it('sorts item by price', () => {
   cy.visit('/')
   cy.get('[data-test="username"]').type('standard_user')
-  cy.get('[data-test="password"]').type('secret_sauce')k
+  cy.get('[data-test="password"]').type('secret_sauce')
   cy.get('[data-test="login-button"]').click()
   cy.location('pathname').should('equal', '/inventory.html')
   cy.get('[data-test="product_sort_container"]').select('lohi')
