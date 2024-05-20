@@ -12,10 +12,7 @@ describe('sorting', () => {
     cy.get('[data-test="login-button"]').click()
     cy.location('pathname').should('equal', '/inventory.html')
   })
-  /**
-   * Sorts item by price
-   * @param {'lohi'|'hilo'|'az'|'za'} order
-   */
+
   function sortByPriceOrName(order) {
     // confirm the argument value at runtime
     expect(order, 'sort order').to.be.oneOf(['lohi', 'hilo', 'az', 'za'])
