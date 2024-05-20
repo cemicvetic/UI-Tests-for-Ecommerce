@@ -3,7 +3,7 @@ const { defineConfig } = require('cypress')
 module.exports = defineConfig({
   e2e: {
     // baseUrl, etc
-    baseUrl: 'http://localhost:3001',
+    baseUrl: 'http://localhost:3000',
     supportFile: false,
     fixturesFolder: false,
     setupNodeEvents(on, config) {
