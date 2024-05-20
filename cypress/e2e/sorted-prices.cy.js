@@ -13,10 +13,6 @@ it('sorts item by price', () => {
     .mapInvoke('slice', 1)
     .map(Number)
     .print()
-    //.should((prices) => {
-   //   const sorted = Cypress._.sortBy(prices)
-  //    expect(prices, 'sorted prices').to.deep.equal(sorted)
-  //  })
     .should('be.sorted')
 })
 
