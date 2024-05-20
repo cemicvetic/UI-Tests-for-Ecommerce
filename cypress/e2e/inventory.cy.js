@@ -8,8 +8,6 @@ beforeEach(() => {
 })
 
 it('has every item from the inventory', () => {
-  // load the inventory JSON fixture file
-  // https://on.cypress.io/fixture
   cy.fixture('inventory.json').then((items) => {
 
     items.forEach((item) => {

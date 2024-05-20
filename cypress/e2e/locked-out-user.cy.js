@@ -3,13 +3,12 @@ import { LoginPage } from './login.page'
 it('shows a login error', () => {
   cy.visit('/')
  LoginPage.getUsername().type('locked_out_user')
-  LoginPage.getPassword().type('secret_sauce')
+ LoginPage.getPassword().type('secret_sauce')
 
 
   cy.log('**there are no errors**')
   LoginPage.noErrors()
 
-  // confirm the page shows errors and stays on login URL
   cy.log('**shows errors**')
   cy.get('[data-test="login-button"]').click()
 

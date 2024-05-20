@@ -1,9 +1,49 @@
 {
-  "devDependencies": {
-    "cypress": "^13.7.3"
-  },
+  "name": "taste-the-sauce",
+  "description": "Cypress testing tutorial using the SauceLabs sample web app",
+  "version": "1.0.0",
+  "private": true,
   "dependencies": {
-    "chai-sorted": "^0.2.0",
-    "cypress-map": "^1.37.0"
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "js-cookie": "^2.2.1",
+    "react": "^17.0.2",
+    "react-app-polyfill": "^2.0.0",
+    "react-burger-menu": "^3.0.6",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^1.1.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.14",
+    "@babel/plugin-proposal-private-methods": "^7.13.0",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/register": "^7.13.14",
+    "cypress": "^12.7.0",
+    "prettier": "^2.8.3",
+    "prop-types": "^15.7.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "start-18": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts build",
+    "test": "cypress run"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all",
+      "ie 11"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version",
+      "ie 11"
+    ]
   }
 }
