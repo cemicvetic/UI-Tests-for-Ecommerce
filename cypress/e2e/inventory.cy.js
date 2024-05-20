@@ -13,7 +13,7 @@ it('has every item from the inventory', () => {
   cy.fixture('inventory.json').then((items) => {
 
     items.forEach((item) => {
-      cy.log(`checking 🎁 **${item.name}**`)
+      cy.log(`checking **${item.name}**`)
       cy.contains('.inventory_item', item.name).within(() => {
         cy.contains('.inventory_item_name', item.name)
         cy.contains('.inventory_item_desc', item.desc)
