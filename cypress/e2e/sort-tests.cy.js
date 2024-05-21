@@ -1,6 +1,7 @@
 import 'cypress-map'
 chai.use(require('chai-sorted'))
 
+
 describe('sorting', () => {
   let userCookie
   beforeEach(() => {
