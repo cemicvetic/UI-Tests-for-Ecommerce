@@ -17,7 +17,6 @@ it('logs out', () => {
     .contains('.menu-item', 'Logout')
     .click()
   cy.location('pathname').should('equal', '/')
-  // we cannot go to the inventory again
   cy.visit('/inventory.html')
   LoginPage.showsError(
     "Epic sadface: You can only access '/inventory.html' when you are logged in.",
