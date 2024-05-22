@@ -23,13 +23,13 @@ export const LoginPage = {
     LoginPage.getPassword().should('have.class', 'error')
   },
   login(username, password) {
-    cy.session(`user ${username} login`, () => {
+   cy.session(`user ${username} login`, () => {
       cy.log('**log in**')
       cy.visit('/')
       LoginPage.getUsername().type(username)
       LoginPage.getPassword().type(password, { log: false })
       LoginPage.getLogin().click()
-     // cy.location('pathname').should('equal', '/inventory.html')
+     cy.location('pathname').should('equal', '/inventory.html')
     })
   },
 }
