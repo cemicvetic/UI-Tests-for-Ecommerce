@@ -30,9 +30,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start-18": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
-    "test": "cypress run"
+    "test": "cypress run",
+    "cy:open": "cypress open --e2e",
+    "dev": "start-test 3000 cy:open",
+    "ci": "start-test 3000"
   },
   "browserslist": {
     "production": [
