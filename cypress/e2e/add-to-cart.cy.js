@@ -27,7 +27,6 @@ describe('Cart', () => {
       .should('be.visible')
     InventoryPage.addItemToCart('Sauce Labs Bolt T-Shirt')
     cy.contains('.inventory_item', 'Sauce Labs Bolt T-Shirt').within(() => {
-      // the button should switch to "Remove"
       cy.contains('button', 'Add to cart').should('not.exist')
       cy.contains('button', 'Remove')
     })
