@@ -34,7 +34,9 @@
     "test": "cypress run",
     "cy:open": "cypress open --e2e",
     "dev": "start-test 3000 cy:open",
-    "ci": "start-test 3000"
+    "ci": "start-test 3000",
+    "lint": "tsc --noEmit --pretty"
+
   },
   "browserslist": {
     "production": [

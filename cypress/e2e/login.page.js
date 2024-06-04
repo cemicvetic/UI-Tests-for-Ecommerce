@@ -17,7 +17,11 @@ export const LoginPage = {
   getLogin() {
     return cy.get('[data-test="login-button"]');
   },
-  showsError() {
+  /**
+   *
+   * @param text
+   */
+  showsError(text) {
     cy.get('[data-test=error]').should('be.visible')
     LoginPage.getUsername().should('have.class', 'error')
     LoginPage.getPassword().should('have.class', 'error')
