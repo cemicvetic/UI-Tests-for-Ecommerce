@@ -6,6 +6,7 @@
     "allowJs": true,
     "noEmit": true,
     "skipLibCheck": true,
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true
   },
