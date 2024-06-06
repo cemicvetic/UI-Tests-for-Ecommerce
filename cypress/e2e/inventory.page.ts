@@ -5,7 +5,7 @@ export const InventoryPage = {
   /**
    * @param {string} name Item name
    */
-  addItemToCart(name) {
+  addItemToCart(name: string) {
     cy.contains('.inventory_item', name)
       .contains('button', 'Add to cart')
       .click()

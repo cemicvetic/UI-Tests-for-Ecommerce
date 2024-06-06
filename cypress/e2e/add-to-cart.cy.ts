@@ -1,9 +1,14 @@
 import { LoginPage } from './login.page'
 import { InventoryPage } from './inventory.page'
 
+interface LoginInfo {
+  username: string
+  password: string
+}
+
 describe('Cart', () => {
   /** @type {{username: string, password: string}} */
-  const user = Cypress.env('users').standard
+  const user: LoginInfo = Cypress.env('users').standard
   if (!user) {
     throw new Error('Missing the standard user')
   }

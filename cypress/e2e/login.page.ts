@@ -21,12 +21,12 @@ export const LoginPage = {
    *
    * @param text
    */
-  showsError(text) {
+  showsError(text: string) {
     cy.get('[data-test=error]').should('be.visible')
     LoginPage.getUsername().should('have.class', 'error')
     LoginPage.getPassword().should('have.class', 'error')
   },
-  login(username, password) {
+  login(username: string, password: string) {
    cy.session(`user ${username} login`, () => {
       cy.log('**log in**')
       cy.visit('/')
