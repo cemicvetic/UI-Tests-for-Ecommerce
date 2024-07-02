@@ -17,14 +17,8 @@ describe('Checkout', () => {
     const ids = Cypress._.map(pickedItems, 'id')
     window.localStorage.setItem('cart-contents', JSON.stringify(ids))
     cy.visit('/checkout-step-one.html')
-    cy.get('.checkout_info_wrapper form').within(() => {
-      cy.get('#first-name').type('Lola')
-      cy.get('#last-name').type('Smith')
-      cy.get('#postal-code').type('90908')
-      cy.get('input[type=submit]')
-        .should('have.attr', 'value', 'Continue')
-        .click()
-    })
+    // @ts-ignore
+    cy.fillForm()
     cy.location('pathname').should('equal', '/checkout-step-two.html')
     cy.get('.cart_list .cart_item').should('have.length', pickedItems.length)
     const prices = Cypress._.map(pickedItems, 'price')
