@@ -1,8 +1,7 @@
-import { LoginPage } from './login.page'
+import { LoginPage } from '../../support/pages/login.page'
 
 /** @type {{username: string, password: string}} */
 const user = Cypress.env('users').standard
-
 if (!user) {
   throw new Error('Missing the standard user')
 }
@@ -17,6 +16,7 @@ it('logs out', () => {
     .contains('.menu-item', 'Logout')
     .click()
   cy.location('pathname').should('equal', '/')
+  // we cannot go to the inventory again
   cy.visit('/inventory.html')
   LoginPage.showsError(
     "Epic sadface: You can only access '/inventory.html' when you are logged in.",

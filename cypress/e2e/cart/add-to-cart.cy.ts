@@ -1,5 +1,5 @@
-import { LoginPage } from './login.page'
-import { InventoryPage } from './inventory.page'
+import { LoginPage } from '../login.page'
+import { InventoryPage } from '../inventory.page'
 
 interface LoginInfo {
   username: string

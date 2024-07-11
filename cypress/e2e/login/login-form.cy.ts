@@ -1,4 +1,4 @@
-import { LoginPage } from './login.page'
+import { LoginPage } from '../../support/pages/login.page'
 
 describe('Login form', () => {
   beforeEach(() => {

@@ -1,4 +1,4 @@
-import { LoginPage } from './login.page'
+import { LoginPage } from '../login.page'
 
 describe('Product', () => {
   /** @type {{username: string, password: string}} */
