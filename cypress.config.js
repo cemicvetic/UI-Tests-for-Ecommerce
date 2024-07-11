@@ -5,7 +5,7 @@ module.exports = defineConfig({
   e2e: {
     // baseUrl, etc
     baseUrl: 'http://localhost:3000',
-    supportFile: false,
+    supportFile: 'cypress/support/e2e.ts',
     env: {
       users: {
         standard: {
@@ -30,6 +30,13 @@ module.exports = defineConfig({
       // implement node event listeners here
       // and load any plugins that require the Node environment
 
+    },
+  },
+
+  component: {
+    devServer: {
+      framework: 'create-react-app',
+      bundler: 'webpack',
     },
   },
 })
