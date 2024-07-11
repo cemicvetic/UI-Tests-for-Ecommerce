@@ -17,8 +17,11 @@ describe('Checkout', () => {
     const ids = Cypress._.map(pickedItems, 'id')
     window.localStorage.setItem('cart-contents', JSON.stringify(ids))
     cy.visit('/checkout-step-one.html')
-    // @ts-ignore
-    cy.fillForm()
+      cy.get('.checkout_info_wrapper form').fillForm({
+        '#first-name': 'Lola',
+        '#last-name': 'Dora',
+        '#postal-code': '98706'
+      }).submit()
     cy.location('pathname').should('equal', '/checkout-step-two.html')
     cy.get('.cart_list .cart_item').should('have.length', pickedItems.length)
     const prices = Cypress._.map(pickedItems, 'price')

@@ -4,6 +4,7 @@ import {InventoryData} from '../../taste-the-sauce/src/utils/InventoryData'
 
 describe('Checkout', () => {
   const user: LoginInfo = Cypress.env('users').standard
+  // we can even check if the user object is valid
   if (!user) {
     throw new Error('Missing the standard user')
   }
@@ -16,16 +17,17 @@ describe('Checkout', () => {
     const ids = Cypress._.map(pickedItems, 'id')
     window.localStorage.setItem('cart-contents', JSON.stringify(ids))
     cy.visit('/checkout-step-one.html')
-    cy.get('.checkout_info_wrapper form').within(() => {
-      cy.get('#first-name').type('Lola')
-      cy.get('#last-name').type('Smith')
-      cy.get('#postal-code').type('90908')
-      cy.get('input[type=submit]')
-        .should('have.attr', 'value', 'Continue')
-        .click()
-    })
+    cy.get('.checkout_info_wrapper form')
+      .find('input[type=submit]')
+      .should('have.attr', 'value', 'Continue')
+    cy.get('.checkout_info_wrapper form')
+      .fillForm({
+        '#first-name': 'Joe',
+        '#last-name': 'Smith',
+        '#postal-code': '90210',
+      })
+      .submit()// we should be on the checkout step two page
     cy.location('pathname').should('equal', '/checkout-step-two.html')
-    // the overview page shows the expected number of picked items
     cy.get('.cart_list .cart_item').should('have.length', pickedItems.length)
     const prices = Cypress._.map(pickedItems, 'price')
     const sum = Cypress._.sum(prices)
