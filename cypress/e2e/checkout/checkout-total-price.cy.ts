@@ -1,4 +1,4 @@
-import { LoginPage } from '../login.page'
+import { LoginPage } from '../../support/pages/login.page'
 import { LoginInfo } from '../index'
 import {InventoryData} from '../../../taste-the-sauce/src/utils/InventoryData'
 
