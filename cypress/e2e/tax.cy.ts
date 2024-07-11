@@ -22,11 +22,11 @@ describe('Checkout', () => {
       .should('have.attr', 'value', 'Continue')
     cy.get('.checkout_info_wrapper form')
       .fillForm({
-        '#first-name': 'Joe',
+        '#first-name': 'Greg',
         '#last-name': 'Smith',
         '#postal-code': '90210',
       })
-      .submit()// we should be on the checkout step two page
+      .submit()
     cy.location('pathname').should('equal', '/checkout-step-two.html')
     cy.get('.cart_list .cart_item').should('have.length', pickedItems.length)
     const prices = Cypress._.map(pickedItems, 'price')
