@@ -1,10 +1,10 @@
 import { LoginPage } from './login.page'
 import { LoginInfo } from '.'
 import {InventoryData} from '../../taste-the-sauce/src/utils/InventoryData'
+import {CheckoutPage} from './checkout.page'
 
 describe('Checkout', () => {
   const user: LoginInfo = Cypress.env('users').standard
-  // we can even check if the user object is valid
   if (!user) {
     throw new Error('Missing the standard user')
   }
@@ -20,13 +20,7 @@ describe('Checkout', () => {
     cy.get('.checkout_info_wrapper form')
       .find('input[type=submit]')
       .should('have.attr', 'value', 'Continue')
-    cy.get('.checkout_info_wrapper form')
-      .fillForm({
-        '#first-name': 'Greg',
-        '#last-name': 'Smith',
-        '#postal-code': '90210',
-      })
-      .submit()
+    CheckoutPage.fillInformationForm().submit()
     cy.location('pathname').should('equal', '/checkout-step-two.html')
     cy.get('.cart_list .cart_item').should('have.length', pickedItems.length)
     const prices = Cypress._.map(pickedItems, 'price')
