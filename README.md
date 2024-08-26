@@ -42,21 +42,21 @@ Clone the repository:
 ## Navigate to the project directory:
 
 
-Copy code
+
   ```sh
 cd UI-Tests-for-Ecommerce
  ```
 ## Install dependencies:
 
   ```sh
-Copy code
+
 npm install
  ```
 
 ## Running Tests 🚀
 
   ```sh
-Copy code
+
 npm run cy:open
  ```
 This will open the Cypress Test Runner, where you can run individual test files.
