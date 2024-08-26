@@ -35,7 +35,7 @@ Here's a quick overview of the project structure:
 
 ## Installation 🛠️
 
-1. Clone the repository:
+Clone the repository:
    ```sh
    git clone https://github.com/cemicvetic/UI-Tests-for-Ecommerce.git
    ```
