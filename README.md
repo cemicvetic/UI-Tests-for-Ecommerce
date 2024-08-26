@@ -1,4 +1,4 @@
-# UI Tests for E-commerce 🛒💻
+# UI Tests for E-commerce 🛒
 
 Welcome to the **UI Tests for E-commerce** project! This repository contains end-to-end (E2E) tests for an e-commerce platform using Cypress. 🧪✨
 
