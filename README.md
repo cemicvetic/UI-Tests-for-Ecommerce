@@ -41,7 +41,7 @@ Here's a quick overview of the project structure:
    ```
 ## Navigate to the project directory:
 
-sh
+
 Copy code
   ```sh
 cd UI-Tests-for-Ecommerce
