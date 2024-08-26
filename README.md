@@ -65,5 +65,6 @@ This will open the Cypress Test Runner, where you can run individual test files.
 ```plaintext
 cypress/e2e: Contains the E2E test files categorized into different modules such as cart, checkout, inventory, and login.
 cypress/fixtures: Contains test data.
-cypress/support: Contains custom commands and utility functions. The pages folder inside it includes the page objects.
+cypress/support: Contains custom commands and utility functions.
+The pages folder inside it includes the page objects.
  ```
