@@ -20,7 +20,7 @@ export const LoginPage = {
     LoginPage.getUsername().should('not.have.class', 'error')
     LoginPage.getPassword().should('not.have.class', 'error')
   },
-  // new methods
+
   getLogin() {
     return cy.get('[data-test=login-button]')
   },
