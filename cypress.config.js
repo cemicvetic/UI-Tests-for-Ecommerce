@@ -2,6 +2,7 @@ const { defineConfig } = require('cypress')
 
 
 module.exports = defineConfig({
+  reporter: 'cypress-mochawesome-reporter',
   e2e: {
     // baseUrl, etc
     baseUrl: 'http://localhost:3000',
@@ -27,6 +28,7 @@ module.exports = defineConfig({
       },
     },
     setupNodeEvents(on, config) {
+      require('cypress-mochawesome-reporter/plugin')(on);
       // implement node event listeners here
       // and load any plugins that require the Node environment
 
