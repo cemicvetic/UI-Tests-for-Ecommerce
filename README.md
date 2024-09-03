@@ -1,21 +1,70 @@
-# Cypress.io end-to-end tests 🚀
+# UI Tests for E-commerce 🛒
 
-[Cypress.io](https://www.cypress.io) is an open source, MIT licensed end-to-end test runner
+Welcome to the **UI Tests for E-commerce** project! This repository contains end-to-end (E2E) tests for an e-commerce platform using Cypress. ✨
 
-## Folder structure
+## Project Structure 📁
 
-These folders hold the end-to-end tests and supporting files for the [Cypress Test Runner](https://github.com/cypress-io/cypress).
+Here's a quick overview of the project structure:
+```plaintext
+📦 UI-Tests-for-Ecommerce
+├── 📂 .idea
+├── 📂 cypress
+│ ├── 📂 e2e
+│ │ ├── 📂 cart
+│ │ ├── 📂 checkout
+│ │ ├── 📂 inventory
+│ │ ├── 📂 login
+│ │ ├── index.ts
+│ │ └── spec.cy.js
+│ ├── 📂 fixtures
+│ ├── 📂 support
+│ │ ├── 📂 pages
+│ │ │ ├── commands.ts
+│ │ │ ├── component-index.html
+│ │ │ ├── component.js
+│ │ │ └── index.d.ts
+│ ├── 📂 videos
+├── 📂 node_modules
+├── 📂 taste-the-sauce
+├── .gitignore
+├── README.md
+├── cypress.config.js
 
-- [fixtures](fixtures) folder holds optional JSON data for mocking, [read more](https://on.cypress.io/fixture)
-- [e2e](e2e) holds the actual end-to-end test files, [read more](https://on.cypress.io/writing-and-organizing-tests)
-- [support](support) file runs before all tests and is a great place to write or load additional custom commands, [read more](https://on.cypress.io/writing-and-organizing-tests#Support-file)
+```
 
-## `cypress.config.js` file
 
-You can configure project options in the [../cypress.config.js](../cypress.config.js) file, see [Cypress configuration doc](https://on.cypress.io/configuration).
+## Installation 🛠️
 
-## More information
+Clone the repository:
+   ```sh
+   git clone https://github.com/cemicvetic/UI-Tests-for-Ecommerce.git
+   ```
+## Navigate to the project directory:
 
-- [https://github.com/cypress.io/cypress](https://github.com/cypress.io/cypress)
-- [https://docs.cypress.io/](https://docs.cypress.io/)
-- [Writing your first Cypress test](https://on.cypress.io/intro)
+
+
+  ```sh
+cd UI-Tests-for-Ecommerce
+ ```
+## Install dependencies:
+
+  ```sh
+
+npm install
+ ```
+
+## Running Tests 🚀
+
+  ```sh
+
+npm run cy:open
+ ```
+This will open the Cypress Test Runner, where you can run individual test files.
+
+## Folder Structure 🗂️
+```plaintext
+cypress/e2e: Contains the E2E test files categorized into different modules such as cart, checkout, inventory, and login.
+cypress/fixtures: Contains test data.
+cypress/support: Contains custom commands and utility functions.
+cypress/support/pages: The pages folder inside it includes the page objects.
+ ```
