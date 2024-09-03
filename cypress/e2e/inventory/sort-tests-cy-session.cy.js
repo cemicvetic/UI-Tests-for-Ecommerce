@@ -15,7 +15,6 @@ describe('sorting', () => {
   })
 
   function sortBy(order) {
-    // confirm the argument value at runtime
     expect(order, 'sort order').to.be.oneOf(['lohi', 'hilo', 'az', 'za'])
     cy.log(`**sort by ${order}**`)
     cy.get('[data-test="product_sort_container"]').select(order)
@@ -41,7 +40,6 @@ describe('sorting', () => {
 
   it('by price highest to highest', () => {
     sortBy('hilo')
-    // confirm the item prices are sorted from highest to lowest
     getPrices().should('be.descending')
   })
 

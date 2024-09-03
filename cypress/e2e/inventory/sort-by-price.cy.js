@@ -1,5 +1,3 @@
-
-// https://www.chaijs.com/plugins/chai-sorted/
 chai.use(require('chai-sorted'))
 import 'cypress-map'
 

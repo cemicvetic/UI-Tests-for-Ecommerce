@@ -1,5 +1,5 @@
-import { LoginPage } from '../../support/pages/login.page'
-import { LoginInfo } from '../index'
+import { LoginPage } from '@support/pages/login.page'
+import { LoginInfo } from '..'
 import {InventoryData} from '../../../taste-the-sauce/src/utils/InventoryData'
 
 describe('Checkout', () => {
