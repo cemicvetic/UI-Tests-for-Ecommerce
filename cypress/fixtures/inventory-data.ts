@@ -1,2 +1,4 @@
-export { InventoryData } from "../../taste-the-sauce/src/utils/InventoryData";
+export { InventoryData } from './InventoryData.js';
+
+
 
