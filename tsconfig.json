@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
+    "target": "ES2018",
     "moduleResolution": "node",
     "types": ["cypress", "cypress-map"],
-    "target": "es2016",
     "strict": true,
     "allowJs": true,
     "noEmit": true,
