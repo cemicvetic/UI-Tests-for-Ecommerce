@@ -1,11 +1,53 @@
-name: ci
-on: [push]
+name: Cypress CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
 jobs:
-
   e2e:
-    uses: bahmutov/cypress-workflows/.github/workflows/standard.yml@v1
-    with:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
 
-      build: npm run lint
-      start: npm run start-18
-      wait-on: 'http://127.0.0.1:3000'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4  # Updated to v4 to support Node.js v20
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4  # Updated to v4
+        with:
+          node-version: 20  # Updated to Node.js v20
+
+      - name: Install dependencies
+        run: npm ci  # Ensure dependencies are installed cleanly
+
+      - name: Build and Lint Application
+        run: |
+          npm run lint  # Ensure your linting step passes
+          npm run build  # Build the application (if needed)
+        env:
+          CI: true  # Prevent interactive prompts or hangs
+
+      - name: Start Application Server
+        run: |
+          npm run start &  # Start the React application server
+          npx wait-on http://127.0.0.1:3000  # Wait for the server to be ready
+        env:
+          CI: true  # Required for Create React App to avoid CI hanging
+
+      - name: Run Cypress Tests with Mochawesome Reporter
+        run: npx cypress run --reporter cypress-mochawesome-reporter --reporter-options "reportDir=cypress/reports/mochawesome-report"
+
+      - name: List Mochawesome Report Files
+        run: ls -al cypress/reports/mochawesome-report/
+
+      - name: Upload Mochawesome Report
+        if: always()
+        uses: actions/upload-artifact@v4  # Updated to v4
+        with:
+          name: mochawesome-report
+          path: cypress/reports/mochawesome-report/
+          retention-days: 5
