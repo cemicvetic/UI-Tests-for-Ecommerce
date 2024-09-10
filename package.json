@@ -29,7 +29,8 @@
     "cypress-map": "^1.40.0",
     "cypress-mochawesome-reporter": "^3.8.2",
     "prettier": "^2.8.3",
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "start-server-and-test": "^2.0.7"
   },
   "scripts": {
     "start": "react-scripts start",
