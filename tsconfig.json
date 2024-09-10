@@ -12,7 +12,8 @@
     "baseUrl": "src",
     "paths": {
       "@support/*": ["../cypress/support/*"],
-      "@fixtures/*": ["../cypress/fixtures/*"]
+      "@fixtures/*": ["../cypress/fixtures/*"],
+
     }
   },
   "include": [

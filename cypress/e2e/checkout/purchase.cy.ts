@@ -1,8 +1,10 @@
-import { LoginInfo } from '..'
 import { LoginPage } from '@support/pages/login.page'
-import { InventoryPage } from '@support/pages/inventory.page'
-import {InventoryData} from '../../../taste-the-sauce/src/utils/InventoryData'
+import { LoginInfo } from '..'
 import { CheckoutPage } from '@support/pages/checkout.page'
+import { InventoryData } from '@fixtures/inventory-data'
+import { InventoryPage } from '@support/pages/inventory.page'
+
+
 
 const users = Cypress.env('users')
 const item = Cypress._.sample(InventoryData)
