@@ -59,7 +59,7 @@ npm install
 
 npm run cy:open
  ```
-This will open the Cypress Test Runner, where you can run individual test files.
+
 
 ## Folder Structure 🗂️
 ```plaintext
