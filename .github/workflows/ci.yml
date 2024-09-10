@@ -1,0 +1,11 @@
+name: ci
+on: [push]
+jobs:
+
+  e2e:
+    uses: bahmutov/cypress-workflows/.github/workflows/standard.yml@v1
+    with:
+
+      build: npm run lint
+      start: npm run start-18
+      wait-on: 'http://127.0.0.1:3000'
