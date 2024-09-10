@@ -19,26 +19,16 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 20  # Using Node.js v20
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci  # Install dependencies cleanly
 
       - name: Run Lint
-        run: npm run lint  # Ensure lint passes
+        run: npm run lint  # Run the linting step to ensure code quality
 
-      - name: Build the Application
-        run: npm run build  # Ensure the application builds successfully
-        env:
-          CI: true
-
-      - name: Start Application Server
-        run: |
-          npm run start-18 &  # Start the server in the background
-          npx wait-on http://127.0.0.1:3000  # Wait for the server to be ready
-
-      - name: Run Cypress Tests
-        run: npx cypress run --reporter cypress-mochawesome-reporter --reporter-options "reportDir=cypress/reports/mochawesome-report"
+      - name: Run CI
+        run: npm run ci  # Start the server, wait, and run Cypress tests
 
       - name: Upload Mochawesome Report
         if: always()
@@ -47,3 +37,4 @@ jobs:
           name: mochawesome-report
           path: cypress/reports/mochawesome-report/
           retention-days: 5
+
